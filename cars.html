@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style_cars.css">
+
+    <title>Challenge-03</title>
+  </head>
+  <body>
+      <!-- Jumbotron -->
+      <div class="jumbotron jumbotron-fluid">
+         <!-- Awal Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <img src="img/logo.png" alt="Logo" class="logo">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link text-black" href="#Our Services">Our Services</a>
+              <a class="nav-link text-black" href="#Why Us">Why Us</a>
+              <a class="nav-link text-black" href="#Testimonial">Testimonial</a>
+              <a class="nav-link text-black" href="#FAQ">FAQ</a>
+              <a class="register btn btn-success text-light" href="#">Register</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Akhir Navbar -->
+      <!-- Layout Di Jumbotron -->
+      <div class="container">
+        <div class="row">
+          <div class="sewa col-sm-6">
+            <h1 class="hd1" id="Our Services">Sewa & Rental Mobil Terbaik di kawasan Mataram</h1>
+            <p class="p1">Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
+            
+          </div>
+          <div class="mobil col-sm-6">
+            <img src="img/img_car.png" alt="Car" class="car img-fluid">
+          </div>
+        </div>
+      </div>
+      <!-- Akhir Layout -->
+      </div>
+      <!-- Akhir Jumbotron -->
+
+      <!-- Form -->
+      <section id="form-cars" class="position-relative d-flex justify-content-center">
+        <div class="w-75 py-4 px-3 bg-white rounded-3 shadow-lg">
+          <form id="form" onsubmit="handleSubmitSearchCars(event)" class="row d-flex justify-content-sm-end">
+            <div class="col-sm ms-sm-2 pe-sm-0">
+              <label class="form-label">Tipe Driver</label>
+              <select id="tipeDriver" class="shadow-none form-select form-select-sm text-secondary text-opacity-75 input" name="tipeDriver" aria-label=".form-select-sm example" required>
+                <option class="text-dark" value=""><span class="text-warning">Pilih Tipe Driver</span></option>
+                <option class="text-dark" value="true">Dengan Sopir</option>
+                <option class="text-dark" value="false">Tanpa Sopir (Lepas Kunci)</option>
+              </select>
+            </div>
+            <div class="col-sm pe-sm-0">
+              <label for="tanggal" class="form-label">Tanggal</label>
+              <input type="date" name="tanggal" id="tanggal" class="shadow-none form-control text-secondary text-opacity-75 fi-calendar input" placeholder="Pilih Tanggal" style="font-size:12px;" required>
+            </div>
+            <div class="col-sm mb-2 pe-sm-0">
+              <label class="form-label">Waktu Jemput</label>
+              <select class="shadow-none form-select form-select-sm text-secondary text-opacity-75 fi-clock input" name="waktuJemput" id="waktuJemput" required>
+                <option class="" value="">Pilih Waktu</option>
+                <option class="text-dark" value="08:00">08.00 WIB</option>
+                <option class="text-dark" value="09:00">09.00 WIB</option>
+                <option class="text-dark" value="10:00">10.00 WIB</option>
+                <option class="text-dark" value="11:00">11.00 WIB</option>
+                <option class="text-dark" value="12:00">12.00 WIB</option>
+              </select>
+            </div>
+            <div class="col-sm mb-2">
+              <label class="form-label" for="jumlahPenumpang">Jumlah Penumpang (optional)</label>
+              <input type="text" name="jumlahPenumpang" id="jumlahPenumpang" class="shadow-none form-control text-secondary text-opacity-75 rounded-1 input fi-users" placeholder="Jumlah Penumpang" style="font-size:12px;">
+            </div>
+            <div class="col-sm align-self-center d-sm-block d-flex justify-content-center mt-3">
+              <button type="submit" class="btn btn-success" onclick="filter()">Cari Mobil</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="position-relative w-75 mx-auto">
+        <div id="search-list" class="row">
+          
+        </div>
+      </section>
+      <!-- Akhir Form -->
+      
+  <!-- Footer -->
+  <div class="cl container">
+  <footer>
+    <div class="row">
+      <div class="we col-sm-3">
+        <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+        <p>binarcarrental@gmail.com</p>
+        <p>081-233-334-808</p>
+      </div>
+      <div class="wa col-sm-3">
+        <p>Our services</p>
+        <p>Why Us</p>
+        <p>Testimonial</p>
+        <p>FAQ</p>
+      </div>
+      <div class="wu col-sm-3">
+        <p class="p13">Connect with us</p>
+          <img src="img/icon_facebook.png" alt="facebook" class="sosmed facebook">
+          <img src="img/icon_instagram.png" alt="instagram" class="sosmed instagram">
+          <img src="img/icon_twitter.png" alt="twitter" class="sosmed twitter">
+          <img src="img/icon_mail.png" alt="mail" class="sosmed mail">
+          <img src="img/icon_twitch.png" alt="twitch" class="sosmed twitch">
+      </div>
+      <div class="wi col-sm-3">
+        <p class="p14">Copyright Binar 2022</p>
+        <img src="img/logo.png" alt="logo" class="logo">
+      </div>
+    </div>
+  </footer>
+</div>
+  <!-- Akhir Footer -->
+      
+  <script src="script.js"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+    
+  </body>
+</html>
